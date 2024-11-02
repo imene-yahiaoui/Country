@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Nom"
+    },
+    "country": {
+      "type": "string",
+      "title": "Pays",
+      "enum": ["France", "Belgique", "Allemagne", "Inconnu"]
+    },
+    "percentage": {
+      "type": "number",
+      "title": "Pourcentage",
+      "minimum": 0,
+      "maximum": 100
+    }
+  },
+  "required": ["name", "country", "percentage"]
+}
