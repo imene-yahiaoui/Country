@@ -15,18 +15,27 @@ import {
   ListItemText,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import "./App.css"
+// Define the data type for each country entry
+interface CountryEntry {
+  name: string;
+  country: string;
+  percentage: number;
+}
 
-const App = () => {
-  const [data, setData] = useState({ name: "", country: "", percentage: 0 });
-  const [countriesList, setCountriesList] = useState([]);
-  const [totalPercentage, setTotalPercentage] = useState(0);
+const App: React.FC = () => {
+  const [data, setData] = useState<CountryEntry>({ name: "", country: "", percentage: 0 });
+  const [countriesList, setCountriesList] = useState<CountryEntry[]>([]);
+  const [totalPercentage, setTotalPercentage] = useState<number>(0);
+
   /**
    * Updates `data` state with the form's current values
    * @param {Object} param0 - Destructured data object from JSONForms event
    */
-  const handleDataChange = ({ data }) => {
+  const handleDataChange = ({ data }: { data: CountryEntry }) => {
     setData(data);
   };
+
   /**
    * Adds a country and percentage entry to the list, if valid.
    * Ensures the total percentage does not exceed 100%.
@@ -55,11 +64,12 @@ const App = () => {
       alert("Veuillez sélectionner un pays et entrer un pourcentage.");
     }
   };
+
   /**
    * Deletes a selected country entry by index and updates the total percentage.
    * @param {number} index - The index of the country to remove
    */
-  const handleDeleteCountry = (index) => {
+  const handleDeleteCountry = (index: number) => {
     const updatedList = countriesList.filter((_, i) => i !== index);
     const updatedTotal = updatedList.reduce(
       (sum, item) => sum + item.percentage,
