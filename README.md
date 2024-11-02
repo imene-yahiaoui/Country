@@ -22,7 +22,7 @@ To set up and run this project locally, follow these steps:
 1. Clone this repository:
 
    ```bash
-   git clone
+   git clone "https://github.com/imene-yahiaoui/Country.git"
    ```
 
 2. Install dependencies:
