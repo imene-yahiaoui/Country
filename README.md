@@ -1,3 +1,6 @@
+Demo :   https://resilient-monstera-8b747d.netlify.app
+
+
 # Country and Percentage Management
 
 This project is a simple application for managing a list of countries with assigned percentages. The application includes a form for entering a country name, selecting a country, and specifying a percentage. It ensures that the sum of percentages does not exceed 100%.
